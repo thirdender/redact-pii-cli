@@ -16,4 +16,4 @@ If you only want to see if the output contains PII, pass a replacement string to
 To run inside Docker, first build an image from the Dockerfile, then you can pipe input through `docker run -i`:
 
     docker build -t redact-pii-cli .
-    cat sample.txt | docker run -i redact-pii-cli node /home/node/app/index.js -
+    cat sample.txt | docker run -i redact-pii-cli -

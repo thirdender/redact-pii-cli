@@ -6,4 +6,4 @@ RUN set -x \
   && npm install
 
 WORKDIR /home/node/app
-CMD ['node', '/home/node/app/index.js']
+ENTRYPOINT ["/usr/bin/env", "node", "index.js"]
