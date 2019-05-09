@@ -12,3 +12,8 @@ To see the output of `redact-pii` directly, pipe your input directly to the tool
 If you only want to see if the output contains PII, pass a replacement string to the tool and grep the output:
 
     REPLACEMENT=`head /dev/urandom | mkpasswd -s`; cat sample.txt | npx github:thirdender/redact-pii-cli --replacement $REPLACEMENT | grep $REPLACEMENT | wc -l
+
+To run inside Docker, first build an image from the Dockerfile, then you can pipe input through `docker run -i`:
+
+    docker build -t redact-pii-cli .
+    cat sample.txt | docker run -i redact-pii-cli node /home/node/app/index.js -
